@@ -1,0 +1,8 @@
+{
+  "name": "passport",
+  "version": "1.0.0",
+  "description": "User login system using passport",
+  "main": "app.js",
+  "author": "vbeakovic <valter.beakovic@gmail.com>",
+  "license": "MIT"
+}
