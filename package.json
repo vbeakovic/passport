@@ -4,5 +4,20 @@
   "description": "User login system using passport",
   "main": "app.js",
   "author": "vbeakovic <valter.beakovic@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "start": "node app"
+  },
+  "dependencies": {
+    "express":"*",
+    "body-parser":"*",
+    "ejs":"*",
+    "express-messages":"*",
+    "express-session":"*",
+    "connect-flash":"*",
+    "mongoose":"*",
+    "passport":"*",
+    "passport-http":"*",
+    "bcryptjs":"*"
+  }
 }
