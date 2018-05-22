@@ -6,18 +6,19 @@
   "author": "vbeakovic <valter.beakovic@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "node app"
+    "start": "PORT=3001 node app"
   },
   "dependencies": {
-    "express":"*",
-    "body-parser":"*",
-    "ejs":"*",
-    "express-messages":"*",
-    "express-session":"*",
-    "connect-flash":"*",
-    "mongoose":"*",
-    "passport":"*",
-    "passport-http":"*",
-    "bcryptjs":"*"
+    "bcryptjs": "*",
+    "body-parser": "*",
+    "connect-flash": "*",
+    "ejs": "*",
+    "express": "*",
+    "express-messages": "*",
+    "express-session": "*",
+    "express-validator": "^5.2.0",
+    "mongoose": "*",
+    "passport": "*",
+    "passport-http": "*"
   }
 }
