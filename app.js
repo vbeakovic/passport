@@ -16,7 +16,7 @@ const app = express();
 
 // Import routes
 const index = require('./routes/index');
-const users = require('./routes/users');
+// const users = require('./routes/users');
 
 // View setup
 app.set('views', path.join(__dirname, 'views'));
@@ -25,6 +25,16 @@ app.set('view engine', 'ejs');
 // Body parser middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
+
+// Static files folder
+app.use(express.static(path.join(__dirname, 'public')));
+
+// External css and js
+app.use('/js', express.static(__dirname + '/node_modules/jquery/dist')); // redirect JS jQuery
+app.use('/js', express.static(__dirname + '/node_modules/popper.js/dist/umd')); // redirect JS jQuery
+app.use('/js', express.static(__dirname + '/node_modules/bootstrap/dist/js')); // redirect bootstrap JS
+app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css')); // redirect CSS bootstrap
+
 
 // Messages middleware
 app.use(require('connect-flash')());
@@ -42,7 +52,8 @@ app.use(session({
 
 // Handle requests
 app.use('/', index);
-app.use('/users', users);
+// app.use('/users', users);
+
 
 // Start listening
 app.listen(port, () => {
