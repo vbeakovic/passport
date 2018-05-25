@@ -33,9 +33,13 @@ router.post('/register', [
   check('password').not().isEmpty().withMessage('The Password cannot be empty'),
   check('passwordConfirm').not().isEmpty().withMessage('The Password Confirmation cannot be empty'),
   check('passwordConfirm').not().isEmpty().custom((value, { req }) => {
-  if (value !== req.body.password) {
-    throw new Error('Password confirmation does not match password');
-  }
+      if (value !== req.body.password) {
+        throw new Error('Password confirmation does not match password');
+      } else {
+          return new Promise((resolve, reject) => {
+            resolve();
+          });
+      }
 })
 ],(req, res, next) => {
   const name = req.body.name;
